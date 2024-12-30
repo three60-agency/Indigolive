@@ -67,44 +67,20 @@ body {
     }
 }
 
-@media (min-width: 1680px) {
-    /* Scale content proportionally for larger screens */
-    .content {
-        padding: calc(40px + ((100vw - 1680px) * 0.02)); /* Margins increase gradually */
-    }
-
-    .intro-text {
-        font-size: calc(30px + ((100vw - 1680px) * 0.01)); /* Font scales proportionally */
-        line-height: calc(32px + ((100vw - 1680px) * 0.01)); /* Line height scales */
-        max-width: calc(100% - calc(80px + ((100vw - 1680px) * 0.04))); /* Adjust margins */
-    }
-
-    footer {
-        bottom: calc(40px + ((100vw - 1680px) * 0.02)); /* Margins increase gradually */
-        left: calc(40px + ((100vw - 1680px) * 0.02));
-        right: calc(40px + ((100vw - 1680px) * 0.02));
-    }
-
-    footer .logo img {
-        width: calc(112px + ((100vw - 1680px) * 0.03)); /* Logo scales proportionally */
-        height: calc(27px + ((100vw - 1680px) * 0.03));
-    }
-
-    footer .email-link {
-        font-size: calc(30px + ((100vw - 1680px) * 0.01)); /* Font scales proportionally */
-        line-height: calc(32px + ((100vw - 1680px) * 0.01));
-    }
-}
-
 /* Footer */
 footer {
     position: fixed;
-    bottom: 40px;
-    left: 40px;
-    right: 40px;
+    bottom: 0;
+    left: 40px; /* Desktop default */
+    right: 40px; /* Desktop default */
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+}
+
+footer .logo {
+    position: relative;
+    bottom: 34px; /* Positioning for desktop */
 }
 
 footer .logo img {
@@ -134,9 +110,13 @@ footer .email-link.visible {
 
 @media (max-width: 768px) {
     footer {
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
+        bottom: 0;
+        left: 20px; /* Mobile margins */
+        right: 20px; /* Mobile margins */
+    }
+
+    footer .logo {
+        bottom: 15px; /* Positioning for mobile */
     }
 
     footer .logo img {
