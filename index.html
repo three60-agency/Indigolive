@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indigo Live</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Vimeo Video -->
+    <div class="video-background">
+        <iframe 
+            src="https://player.vimeo.com/video/1042854389?background=1&autoplay=1&loop=1&muted=1&controls=0&byline=0&portrait=0&title=0" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            title="Background Video"
+            class="vimeo-iframe">
+        </iframe>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="intro-text">
+            EXTRAORDINARY AWAITS. We’re crafting a new digital experience that captures the passion, precision, and creativity at the heart of everything we do. Stay tuned—we’ll be back online soon.
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo">
+            <img src="assets/indigolive-logo.svg" alt="Indigo Live Logo">
+        </div>
+        <div class="email-link" onclick="showEmail()" id="emailLink">
+            Email us
+        </div>
+    </footer>
+
+    <!-- Vimeo API Script -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
