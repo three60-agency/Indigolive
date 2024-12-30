@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #6407CE;
+    color: #FFFFFF;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Background Video */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Content */
+.content {
+    padding: 40px; /* Desktop default */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.intro-text {
+    font-size: 30px; /* Desktop size */
+    line-height: 32px;
+    text-align: left;
+    max-width: calc(100% - 80px); /* Accounts for 40px margins */
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 20px; /* Mobile margins */
+    }
+
+    .intro-text {
+        font-size: 25px; /* Mobile size */
+        line-height: 27px;
+        max-width: calc(100% - 40px); /* 20px margins */
+    }
+}
+
+@media (min-width: 1680px) {
+    /* Scale content proportionally for larger screens */
+    .content {
+        padding: calc(40px + ((100vw - 1680px) * 0.02)); /* Margins increase gradually */
+    }
+
+    .intro-text {
+        font-size: calc(30px + ((100vw - 1680px) * 0.01)); /* Font scales proportionally */
+        line-height: calc(32px + ((100vw - 1680px) * 0.01)); /* Line height scales */
+        max-width: calc(100% - calc(80px + ((100vw - 1680px) * 0.04))); /* Adjust margins */
+    }
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Aligns items at the bottom edge */
+    height: auto;
+}
+
+/* Logo Position */
+footer .logo img {
+    width: 112px;
+    height: 27px;
+    margin-bottom: 34px; /* Position logo 34px from the bottom for desktop */
+}
+
+footer .email-link {
+    font-size: 30px;
+    line-height: 32px;
+    text-align: right;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    display: inline-block;
+    opacity: 1;
+    margin-bottom: 40px; /* Align "Email us" with the logo */
+}
+
+footer .email-link.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+footer .email-link.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    footer {
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+    }
+
+    footer .logo img {
+        width: 101px;
+        height: 24px;
+        margin-bottom: 15px; /* Position logo 15px from the bottom for mobile */
+    }
+
+    footer .email-link {
+        font-size: 25px;
+        line-height: 27px;
+        margin-bottom: 20px; /* Align "Email us" with the logo on mobile */
+    }
+}
